@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Revise {
 
@@ -70,13 +71,31 @@ public class Revise {
          return maxLen;
     }
 
+    public int fruitsIntoTheBaskets(int[] arr, int k) {
+        int l = 0, r = 0, maxLen = 0;
+        Map<Integer, Integer> typesOfFruit = new HashMap<>();
+        while (r < arr.length) {
+            typesOfFruit.merge(arr[r], 1, Integer::sum);
+            if(typesOfFruit.size() > k){
+                typesOfFruit.compute(arr[r] , (key, val) -> val > 1 ? val - 1 : null);
+                l++;
+            }else{
+            maxLen = Math.max(maxLen, r - l + 1);
+            }
+            r++;
+        }
+        return maxLen;
+    }
+
     public static void main(String[] args) {
         int[] arr = {2,5,1,7,1, 4, 3, 2, 11};
         int[] consecutiveOnesAndZeroes = {1,1,1,1,0,0,0,1,0,1,1,1,1,0};
+        int[] maxFruits = {3,3,3,1,1,3,1,2,1,2,2,4,5};
         Revise revise = new Revise();
         System.out.println(revise.longestSubarrayWithSumLessThanOrEqualToK(arr, 14));
         System.out.println(revise.maxPointsToObtainFromKCards(4, arr));
         System.out.println(revise.longestSubstringWithNoRepeatingCharacters("abcdbcefgh"));
         System.out.println(revise.maxConsecutiveOnes(consecutiveOnesAndZeroes, 2));
+        System.out.println(revise.fruitsIntoTheBaskets(maxFruits, 2));
     }
 }
