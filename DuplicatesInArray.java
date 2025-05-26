@@ -9,9 +9,9 @@ public class DuplicatesInArray {
 
         for (int i = 0; i < arr.length; i++) {
             map.compute(arr[i],(k,v)-> v+1);
-            if(duplicates[arr[i]] == null && map.get(arr[i])>1){
+            /*if(duplicates[arr[i]] == null && map.get(arr[i])>1){
                 duplicates[arr[i]];
-            }
+            }*/
         }
     }
 }
