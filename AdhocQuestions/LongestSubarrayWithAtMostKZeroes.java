@@ -1,3 +1,5 @@
+package AdhocQuestions;
+
 public class LongestSubarrayWithAtMostKZeroes {
 
     public static void main(String[] args) {

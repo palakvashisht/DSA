@@ -1,3 +1,5 @@
+package AdhocQuestions;
+
 import java.util.Scanner;
 
 public class BinarySubarraysWithSum {

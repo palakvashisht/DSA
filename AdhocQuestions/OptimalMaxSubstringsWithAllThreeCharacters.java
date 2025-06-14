@@ -1,3 +1,5 @@
+package AdhocQuestions;
+
 import java.util.Arrays;
 
 public class OptimalMaxSubstringsWithAllThreeCharacters {

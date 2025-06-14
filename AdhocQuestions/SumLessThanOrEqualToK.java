@@ -1,3 +1,5 @@
+package AdhocQuestions;
+
 public class SumLessThanOrEqualToK {
 
     public int BruteForce(int[] arr, int k) {
