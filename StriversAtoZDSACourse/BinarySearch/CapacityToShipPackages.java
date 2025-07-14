@@ -3,7 +3,7 @@ package StriversAtoZDSACourse.BinarySearch;
 import java.util.Arrays;
 
 public class CapacityToShipPackages {
-    public static int findDays(int[] arr, int limit, int mid) {
+    public static int findDays(int[] arr, int mid) {
         int sum = 0;
         int days = 1;
         for (int num : arr) {
@@ -21,7 +21,7 @@ public class CapacityToShipPackages {
         int high = Arrays.stream(arr).sum();
         while(low <= high){
             int mid = low + (high-low)/2;
-            int daysToBeTaken = findDays(arr, days, mid);
+            int daysToBeTaken = findDays(arr, mid);
             if(daysToBeTaken <= days){
                 high = mid - 1;
             }else{
